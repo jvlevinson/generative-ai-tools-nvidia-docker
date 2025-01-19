@@ -1,6 +1,8 @@
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu24.04
 
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get upgrade -y
 
 RUN apt update
 RUN apt install -y git curl

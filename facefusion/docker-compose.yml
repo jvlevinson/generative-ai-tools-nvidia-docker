@@ -3,7 +3,7 @@ version: '3.8'
 services:
   facefusion.v2:
     container_name: facefusion-nvidia-docker
-    image: piotrraszkowski/facefusion-nvidia-docker:latest
+    image: nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu24.04
     restart: always
     build:
       context: .
@@ -20,7 +20,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ['0']
+              device_ids: ['all']
               capabilities: [ gpu, video ]
 
 volumes:
