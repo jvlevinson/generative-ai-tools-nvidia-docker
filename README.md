@@ -1,6 +1,6 @@
 # System and Hardware Requirements
 1. x86_64/amd64 architecture
-2. Ubuntu 22.04 Server Installed.
+2. Ubuntu 24.04 Server Installed.
 3. Nvidia Graphics Card (tested on 1060 6GB VRam).
 4. Recommended is more than 200 GB available for your docker volumes.
 

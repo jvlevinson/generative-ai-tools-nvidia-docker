@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 as python3.10-base
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu24.04 as python3.10-base
 
 ENV DEBIAN_FRONTEND noninteractive
 
