@@ -1,6 +1,8 @@
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04 as python3.10-base
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu24.04 as python3.10-base
 
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get upgrade -y
 
 RUN uname -a
 
@@ -12,7 +14,7 @@ RUN apt install -y pip
 
 FROM python3.10-base as automatic1111vo
 
-ARG AUTOMATIC1111_VERSION=v1.6.1
+ARG AUTOMATIC1111_VERSION=v1.6.2
 
 #Install TMalloc
 RUN apt install -y libgoogle-perftools-dev

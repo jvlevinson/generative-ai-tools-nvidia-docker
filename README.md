@@ -1,12 +1,12 @@
 # System and Hardware Requirements
 1. x86_64/amd64 architecture
-2. Ubuntu 22.04 Server Installed.
+2. Ubuntu 24.04 Server Installed.
 3. Nvidia Graphics Card (tested on 1060 6GB VRam).
 4. Recommended is more than 200 GB available for your docker volumes.
 
 # Prerequisites
 1. Install Docker on your host machine: https://docs.docker.com/engine/install/ubuntu/.
-2. Install CUDA and Nvidia drivers on your host machine: https://www.cherryservers.com/blog/install-cuda-ubuntu.
+2. Install CUDA and Nvidia drivers on your host machine: https://www.cherryservers.com/blog/install-cuda-ubuntu-24-04.
    1. Tested and optimized for CUDA 11.8.
    2. Tested with Nvidia Drivers version 545.
 3. Clone this repository.
@@ -85,8 +85,8 @@ Default memory limit is set to 8 GB. If you want to change it you can manipulate
 - https://github.com/AUTOMATIC1111/stable-diffusion-webui
 - https://github.com/facefusion/facefusion
 - https://github.com/bmaltais/kohya_ss
-- https://www.cherryservers.com/blog/install-cuda-ubuntu
+- https://www.cherryservers.com/blog/install-cuda-ubuntu-24-04
 - https://gitlab.com/nvidia/container-images/cuda/-/blob/master/dist/11.7.1/ubuntu2204/base/Dockerfile
 - https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#package-manager-ubuntu-install
 - https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
-- https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
+- https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_network

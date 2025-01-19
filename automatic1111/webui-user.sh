@@ -2,7 +2,22 @@
 # https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimum-SDXL-Usage
 # https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Optimizations
 
-export COMMANDLINE_ARGS="$COMMANDLINE_ARGS --enable-insecure-extension-access --listen"
+# Validate environment variables
+validate_env_var() {
+  local var_name="$1"
+  local var_value="$2"
+  if [[ "$var_value" != "true" && "$var_value" != "false" ]]; then
+    echo "Error: Invalid value for $var_name. Expected 'true' or 'false', got '$var_value'."
+    exit 1
+  fi
+}
+
+validate_env_var "IS_LOWVRAM" "$IS_LOWVRAM"
+validate_env_var "IS_MEDVRAM" "$IS_MEDVRAM"
+validate_env_var "USE_XFORMERS" "$USE_XFORMERS"
+validate_env_var "USE_CUDA_118" "$USE_CUDA_118"
+
+export COMMANDLINE_ARGS="$COMMANDLINE_ARGS --listen"
 
 if [ "$IS_LOWVRAM" = "true" ]; then
   export COMMANDLINE_ARGS="$COMMANDLINE_ARGS --lowvram --opt-split-attention"
@@ -26,3 +41,11 @@ else
 fi
 
 echo "Command line args = ${COMMANDLINE_ARGS}"
+
+# Add logging
+log_file="/var/log/webui-user.log"
+exec > >(tee -a "$log_file") 2>&1
+
+# Implement monitoring (simple example)
+monitoring_file="/var/log/webui-user-monitoring.log"
+echo "$(date): Script executed" >> "$monitoring_file"

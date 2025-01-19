@@ -3,7 +3,7 @@ version: '3.8'
 services:
   automatic1111.v1.6:
     container_name: automatic1111-nvidia-docker
-    image: piotrraszkowski/automatic1111-nvidia-docker:latest
+    image: nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu24.04
     restart: always
     build:
       context: .
@@ -25,6 +25,7 @@ services:
         reservations:
           devices:
             - driver: nvidia
+              device_ids: ['all']
               capabilities: [ gpu ]
 volumes:
   automatic1111_data:

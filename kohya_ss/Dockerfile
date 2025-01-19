@@ -1,6 +1,8 @@
-FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04 as python3.10-base
+FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu24.04 as python3.10-base
 
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get upgrade -y
 
 RUN uname -a
 
